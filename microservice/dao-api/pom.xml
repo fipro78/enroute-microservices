@@ -9,15 +9,17 @@
 
   <groupId>org.osgi.enroute.examples.microservice</groupId>
   <artifactId>dao-api</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
 
-  <description>The dao-api API bundle - built using OSGi enRoute R7</description>
+  <description>The dao-api API bundle</description>
 
   <dependencies>
     <dependency>
-      <groupId>org.osgi.enroute</groupId>
-      <artifactId>osgi-api</artifactId>
-      <type>pom</type>
+      <groupId>org.osgi</groupId>
+      <artifactId>osgi.core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>osgi.annotation</artifactId>
     </dependency>
   </dependencies>
 

@@ -9,26 +9,47 @@
 
   <groupId>org.osgi.enroute.examples.microservice</groupId>
   <artifactId>dao-impl-jpa</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
 
-  <description>The dao-impl-jpa DS component - built using OSGi enRoute R7</description>
+  <description>The dao-impl-jpa DS component</description>
 
   <dependencies>
     <dependency>
-      <groupId>org.osgi.enroute</groupId>
-      <artifactId>osgi-api</artifactId>
-      <type>pom</type>
+      <groupId>org.osgi</groupId>
+      <artifactId>osgi.core</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.osgi.enroute</groupId>
-      <artifactId>test-bundles</artifactId>
-      <type>pom</type>
+      <groupId>org.osgi</groupId>
+      <artifactId>osgi.annotation</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.osgi.enroute</groupId>
-      <artifactId>enterprise-api</artifactId>
-      <type>pom</type>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.service.component.annotations</artifactId>
     </dependency>
+
+    <dependency>
+      <groupId>org.apache.servicemix.bundles</groupId>
+      <artifactId>org.apache.servicemix.bundles.junit</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+    </dependency>
+
+    <!-- OSGi Transaction Control -->
+    <dependency>
+      <groupId>org.apache.aries.tx-control</groupId>
+      <artifactId>tx-control-service-xa</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.aries.tx-control</groupId>
+      <artifactId>tx-control-provider-jpa-xa</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.aries.jpa.javax.persistence</groupId>
+      <artifactId>javax.persistence_2.1</artifactId>
+    </dependency>
+
     <dependency>
       <groupId>org.osgi.enroute.examples.microservice</groupId>
       <artifactId>dao-api</artifactId>

@@ -9,46 +9,203 @@
 
   <groupId>org.osgi.enroute.examples.microservice</groupId>
   <artifactId>rest-app</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
 
-  <description>The rest-app application packaging project - using OSGi enRoute R7</description>
+  <description>The rest-app application packaging project</description>
 
   <dependencies>
+
     <dependency>
-      <groupId>org.osgi.enroute.examples.microservice</groupId>
-      <artifactId>rest-service</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
+      <groupId>org.osgi</groupId>
+      <artifactId>osgi.core</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.osgi.enroute</groupId>
-      <artifactId>osgi-api</artifactId>
-      <type>pom</type>
+      <groupId>org.osgi</groupId>
+      <artifactId>osgi.annotation</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.osgi.enroute</groupId>
-      <artifactId>impl-index</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.osgi.enroute</groupId>
-      <artifactId>debug-bundles</artifactId>
-      <type>pom</type>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.service.configurator</artifactId>
     </dependency>
 
+    <!--  The OSGi framework RI is Equinox  -->
+    <dependency>
+      <groupId>org.eclipse.platform</groupId>
+      <artifactId>org.eclipse.osgi</artifactId>
+    </dependency>
+    <!--  Declarative Services  -->
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.apache.felix.scr</artifactId>
+    </dependency>
+    <!--  Configuration Admin  -->
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.apache.felix.configadmin</artifactId>
+    </dependency>
+    <!--  Metatype  -->
+    <dependency>
+      <groupId>org.eclipse.platform</groupId>
+      <artifactId>org.eclipse.equinox.metatype</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.service.metatype</artifactId>
+    </dependency>
+    <!--  Event Admin  -->
+    <dependency>
+      <groupId>org.eclipse.platform</groupId>
+      <artifactId>org.eclipse.equinox.event</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.service.event</artifactId>
+    </dependency>
+    <!--  Log Stream Service  -->
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.service.log</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.platform</groupId>
+      <artifactId>org.eclipse.equinox.log.stream</artifactId>
+    </dependency>
+    <!--  Http Whiteboard  -->
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.apache.felix.http.jetty</artifactId>
+    </dependency>
+    <!--  Http Servlet 3.1 API with contract  -->
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.apache.felix.http.servlet-api</artifactId>
+    </dependency>
+    <!--  JAX-RS Whiteboard  -->
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.service.jaxrs</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.aries.jax.rs</groupId>
+      <artifactId>org.apache.aries.jax.rs.whiteboard</artifactId>
+    </dependency>
+    <!--  JAX-RS 2.1 API with contract  -->
+    <dependency>
+      <groupId>org.apache.aries.spec</groupId>
+      <artifactId>org.apache.aries.javax.jax.rs-api</artifactId>
+    </dependency>
+    <!--  JAX-RS Jackson  -->
+    <dependency>
+      <groupId>org.apache.aries.jax.rs</groupId>
+      <artifactId>org.apache.aries.jax.rs.jackson</artifactId>
+    </dependency>
+    <!--  OSGi Function  -->
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.util.function</artifactId>
+    </dependency>
+    <!--  OSGi Promise  -->
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.util.promise</artifactId>
+    </dependency>
+    <!--  OSGi PushStream  -->
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.util.pushstream</artifactId>
+    </dependency>
+    <!--  OSGi Converter  -->
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.util.converter</artifactId>
+    </dependency>
+    <!--  OSGi Configurator  -->
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.apache.felix.configurator</artifactId>
+    </dependency>
+
+    <!--  Several implementations need to log using SLF4J  -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-core</artifactId>
+    </dependency>
+
+    <!-- Java 11 XML -->
+    <dependency>
+      <groupId>com.sun.activation</groupId>
+      <artifactId>jakarta.activation</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.sun.xml.bind</groupId>
+      <artifactId>jaxb-osgi</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>jakarta.xml.bind</groupId>
+      <artifactId>jakarta.xml.bind-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>jakarta.xml.ws</groupId>
+      <artifactId>jakarta.xml.ws-api</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.geronimo.specs</groupId>
+      <artifactId>geronimo-jaxrs_2.1_spec</artifactId>
+    </dependency>
+
+    <!--  The Web Console  -->
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.apache.felix.webconsole</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.apache.felix.webconsole.plugins.ds</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.apache.felix.inventory</artifactId>
+    </dependency>
+
+    <!--  The Gogo Shell  -->
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.apache.felix.gogo.shell</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.apache.felix.gogo.runtime</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.apache.felix.gogo.command</artifactId>
+    </dependency>
+
+    <!-- Application Bundles -->
     <dependency>
       <groupId>org.osgi.enroute.examples.microservice</groupId>
       <artifactId>dao-impl</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
     <dependency>
-      <groupId>org.apache.johnzon</groupId>
-      <artifactId>johnzon-core</artifactId>
-      <version>1.1.0</version>
+      <groupId>org.osgi.enroute.examples.microservice</groupId>
+      <artifactId>rest-service</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
     </dependency>
+
+    <!-- H2 Database -->
     <dependency>
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
-      <version>1.4.196</version>
+      <version>2.1.214</version>
       <scope>runtime</scope>
     </dependency>
   </dependencies>
